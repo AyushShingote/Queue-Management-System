@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-container":"#e5eeff","on-primary-fixed":"#00174b","secondary-fixed":"#89f5e7","on-secondary-fixed":"#00201d","primary-container":"#2563eb","surface-variant":"#d3e4fe","inverse-surface":"#213145","primary-fixed-dim":"#b4c5ff","on-surface":"#0b1c30","on-secondary-fixed-variant":"#005049","on-primary-fixed-variant":"#003ea8","on-background":"#0b1c30","on-surface-variant":"#434655","background":"#f8f9ff","primary-fixed":"#dbe1ff","on-tertiary-fixed-variant":"#3323cc","tertiary":"#4338d9","outline":"#737686","surface-container-high":"#dce9ff","error":"#ba1a1a","surface-tint":"#0053db","tertiary-container":"#5d55f3","secondary-container":"#86f2e4","on-secondary-container":"#006f66","surface-container-lowest":"#ffffff","outline-variant":"#c3c6d7","on-secondary":"#ffffff","surface-container-low":"#eff4ff","surface-bright":"#f8f9ff","error-container":"#ffdad6","tertiary-fixed":"#e2dfff","on-primary":"#ffffff","surface-container-highest":"#d3e4fe","surface-dim":"#cbdbf5","inverse-primary":"#b4c5ff","surface":"#f8f9ff","primary":"#004ac6","on-error-container":"#93000a","on-tertiary":"#ffffff","tertiary-fixed-dim":"#c3c0ff","on-primary-container":"#eeefff","inverse-on-surface":"#eaf1ff","secondary":"#006a61","on-tertiary-container":"#f2eeff","secondary-fixed-dim":"#6bd8cb","on-error":"#ffffff","on-tertiary-fixed":"#0f0069"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-xxs":"0.125rem","margin-mobile":"1rem","margin":"2rem","margin-tablet":"1.5rem","space-sm":"0.5rem","gutter":"1.5rem","gutter-tablet":"1rem","space-3xl":"4rem","space-lg":"1.5rem","gutter-mobile":"0.75rem","space-md":"1rem","space-2xl":"3rem","space-xs":"0.25rem"},"fontFamily":{"display-token-mobile":["Inter"],"label-numeric":["Inter"],"title-md":["Inter"],"headline-sm":["Inter"],"body-md":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"label-lg":["Inter"],"display-token":["Inter"],"headline-md":["Inter"],"display-hero":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"body-sm":["Inter"],"display-hero-mobile":["Inter"]},"fontSize":{"display-token-mobile":["32px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"800"}],"label-numeric":["14px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"700"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"display-token":["48px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-hero":["64px",{"lineHeight":"72px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-low"><img alt="MediQueue Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X2Kk5oTnI712WVSLm0uzIosIP02Ou0LbCY9X7UMYJ4j217ggKl42l5XjEvxf3xQsrT6C3Q8Sbw3hZv9HC3WRrSSg6_Ru3J_ln2cdQQy9EkcUihGyjrsHoV993piszFITY_h0vbxU79bl3KD6YujxXIC1P0jBn7TaZQVVYy6QIr7R6S0Y4Z0SwyuHC_nbYvQjNdb7bNtMueO-2NossNqdDar_MsTauM8zvKk9ybOa6ShsT38C1EqEcwdbs"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary leading-tight">MediQueue</span><span class="font-label-md text-label-md text-on-surface-variant leading-none">Clinical Suite</span></div></div><div class="p-space-md"><div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xxs"><div class="flex items-center gap-space-xs text-secondary"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-md text-label-md uppercase tracking-wider">Active Station</span></div><span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Main Counter 01</span><span class="font-body-sm text-body-sm text-on-surface-variant truncate">General OPD Department</span></div></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm" data-path="queue-management" href="#"><span class="material-symbols-outlined text-[20px]">view_kanban</span><span class="font-label-lg text-label-lg">Queue Management</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="register-patient" href="#"><span class="material-symbols-outlined text-[20px]">person_add</span><span class="font-label-lg text-label-lg">Register Patient</span></a></nav></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_rgba(0,0,0,0.02)]"><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface-variant uppercase">Counter Queue</span><span class="font-title-md text-title-md text-primary font-bold">14 In Waiting</span></div><div class="flex items-center justify-center w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-[18px]">timer</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xxs rounded-full bg-surface-container"><span class="material-symbols-outlined text-primary text-[18px]">medical_services</span><span class="font-label-md text-label-md text-on-surface font-medium">OPD Station #01 Active</span></div><div class="hidden lg:flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-body-sm text-body-sm text-on-surface-variant">Next Called: <strong class="text-on-surface font-label-numeric text-label-numeric">A-108</strong></span></div></div><div class="flex items-center gap-space-md"><button class="relative p-space-xs rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span></button><div class="h-6 w-px bg-outline-variant"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface leading-tight">Nurse Sarah Jenkins, RN</span><span class="font-label-md text-label-md text-secondary leading-none">Clinical Staff</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 w-full px-space-lg bg-background min-h-screen"><div class="flex flex-col w-full pb-space-3xl">
+<!-- Operational Header & Live Status Strip -->
+<div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md py-space-lg mb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm mb-space-xxs">
+<span class="inline-flex items-center justify-center w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-secondary font-bold">Live FIFO Controller</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-md text-label-md text-on-surface-variant">Station Terminal #01</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Queue Operations & Management</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Counter 01 — General OPD | Ambulatory Care & Immediate Triage Inflow</p>
+</div>
+<!-- Top Action Toolbar -->
+<div class="flex flex-wrap items-center gap-space-sm w-full xl:w-auto">
+<!-- Auto Call Toggle Switch -->
+<div class="flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface leading-tight font-semibold" id="autoCallLabel">Auto-Call Mode</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-none" id="autoCallStatus">Inactive (Manual)</span>
+</div>
+<button aria-pressed="false" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full bg-surface-container-highest transition-colors duration-200 ease-in-out focus:outline-none" id="autoCallToggle" type="button">
+<span class="sr-only">Toggle auto call</span>
+<span class="pointer-events-none inline-block h-5 w-5 transform translate-x-0.5 translate-y-0.5 rounded-full bg-surface-container-lowest shadow ring-0 transition duration-200 ease-in-out" id="autoCallPin"></span>
+</button>
+</div>
+<!-- Quick Audio Announcement Test -->
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container transition-all shadow-sm" onclick="triggerAudioChime('Counter 01 Test Broadcast')" type="button">
+<span class="material-symbols-outlined text-[19px] text-primary">volume_up</span>
+<span class="font-label-lg text-label-lg">Sound Check</span>
+</button>
+<!-- Primary Next Patient Trigger -->
+<button class="flex items-center gap-space-sm px-space-lg py-space-sm rounded-xl bg-primary text-on-primary font-semibold hover:bg-primary-container shadow-md hover:shadow-lg transition-all active:scale-[0.98]" id="mainCallNextBtn" type="button">
+<span class="material-symbols-outlined text-[22px]">campaign</span>
+<span class="font-label-lg text-label-lg tracking-wide">Call Next Patient (H-102)</span>
+</button>
+</div>
+</div>
+<!-- Operational Filter Strip & Search Bar -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-center mb-space-xl p-space-sm rounded-2xl bg-surface-container-lowest shadow-sm">
+<div class="lg:col-span-5 flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-outline text-[20px]">search</span>
+<input class="w-full bg-transparent border-none text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md focus:outline-none" id="queueSearch" placeholder="Filter by Token (e.g. H-102) or Name..." type="text"/>
+<span class="px-space-xs py-0.5 text-[10px] uppercase font-bold rounded bg-surface-container text-on-surface-variant">ESC</span>
+</div>
+<!-- Status Tabs -->
+<div class="lg:col-span-7 flex items-center gap-space-xs overflow-x-auto pb-space-xxs lg:pb-0" id="filterTabs">
+<button class="tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md font-semibold bg-primary text-on-primary transition-all whitespace-nowrap shadow-sm" data-filter="all" type="button">All (18)</button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap" data-filter="waiting" type="button">Waiting (14)</button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap" data-filter="called" type="button">Called (1)</button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap" data-filter="in-progress" type="button">In Progress (1)</button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap" data-filter="completed" type="button">Completed (42)</button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap" data-filter="exceptions" type="button">Exceptions / Skipped (2)</button>
+</div>
+</div>
+<!-- Primary Split Hero: Active Serving Console & Impending FIFO Target -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-2xl">
+<!-- LEFT PANEL: Currently In Service -->
+<div class="lg:col-span-6 rounded-3xl bg-surface-container-lowest p-space-xl shadow-md relative overflow-hidden flex flex-col justify-between">
+<!-- Ambient Visual Tone Overlay -->
+<div class="absolute -top-16 -right-16 w-52 h-52 bg-secondary-container/40 rounded-full blur-3xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Currently In Service</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-numeric text-label-numeric font-bold">
+<span class="material-symbols-outlined text-[15px] text-secondary">pace</span>
+<span id="serviceTimer">08:32</span>
+</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-space-sm mb-space-lg">
+<div class="flex items-baseline gap-space-md">
+<span class="font-display-token text-display-token text-on-surface tracking-tighter" id="currentServicingToken">H-101</span>
+<span class="px-space-sm py-space-xxs rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface-variant font-bold">Walk-in</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Started 09:24 AM</span>
+</div>
+</div>
+<!-- Clinical Patient Brief Card -->
+<div class="p-space-md rounded-2xl bg-surface-container-low mb-space-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary font-bold font-title-md text-title-md">
+              RM
+            </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold" id="currentServicingName">Robert Martinez</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Age: 48 • Male • Complaint: Severe Acute Migraine</span>
+</div>
+</div>
+<div class="hidden sm:flex flex-col items-end">
+<span class="font-label-md text-label-md text-on-surface-variant">MRN Record</span>
+<span class="font-label-numeric text-label-numeric text-on-surface font-semibold">#OPD-88219</span>
+</div>
+</div>
+</div>
+<!-- Action Panel for Current Patient -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs pt-space-md">
+<!-- Mark Completed -->
+<button class="flex flex-col items-center justify-center p-space-sm rounded-xl bg-secondary text-on-secondary hover:opacity-90 shadow-sm transition-all active:scale-95 group" onclick="markServingComplete()" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1 group-hover:scale-110 transition-transform">check_circle</span>
+<span class="font-label-md text-label-md font-semibold text-center leading-tight">Complete Service</span>
+</button>
+<!-- Audio Re-call -->
+<button class="flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface-container-high text-primary hover:bg-surface-container transition-all active:scale-95" onclick="triggerAudioChime('Re-calling token H-101 Robert Martinez to Counter 01')" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">replay</span>
+<span class="font-label-md text-label-md font-semibold text-center leading-tight">Recall Audio</span>
+</button>
+<!-- No Show Trigger -->
+<button class="flex flex-col items-center justify-center p-space-sm rounded-xl bg-error-container text-on-error-container hover:opacity-90 transition-all active:scale-95" onclick="openExceptionModal('H-101', 'No-Show / Unresponsive')" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">person_off</span>
+<span class="font-label-md text-label-md font-semibold text-center leading-tight">No-Show / Skip</span>
+</button>
+<!-- Transfer Station -->
+<button class="flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all active:scale-95" onclick="transferQueuePrompt('H-101')" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">swap_horiz</span>
+<span class="font-label-md text-label-md font-semibold text-center leading-tight">Transfer / Hold</span>
+</button>
+</div>
+</div>
+<!-- RIGHT PANEL: Next Eligible FIFO Patient -->
+<div class="lg:col-span-6 rounded-3xl bg-surface-container-lowest p-space-xl shadow-md relative overflow-hidden flex flex-col justify-between">
+<!-- Ambient Visual Tone Overlay -->
+<div class="absolute -top-16 -right-16 w-52 h-52 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Next Eligible Patient (FIFO #1)</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold">
+            16m In Lobby
+          </span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-space-sm mb-space-lg">
+<div class="flex items-baseline gap-space-md">
+<span class="font-display-token text-display-token text-on-surface tracking-tighter text-primary">H-102</span>
+<span class="px-space-sm py-space-xxs rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface-variant font-bold">Walk-in</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+<span>Registered 09:18 AM</span>
+</div>
+</div>
+<!-- Next Patient Brief Card -->
+<div class="p-space-md rounded-2xl bg-surface-container-low mb-space-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary font-bold font-title-md text-title-md">
+              EV
+            </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Eleanor Vance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Age: 62 • Female • Priority: Normal OPD Screening</span>
+</div>
+</div>
+<div class="hidden sm:flex flex-col items-end">
+<span class="font-label-md text-label-md text-on-surface-variant">Queue Depth</span>
+<span class="font-label-numeric text-label-numeric text-primary font-semibold">#1 of 14</span>
+</div>
+</div>
+</div>
+<!-- Action Panel for Next Eligible Patient -->
+<div class="flex flex-col sm:flex-row items-center gap-space-sm pt-space-md">
+<button class="w-full sm:flex-1 flex items-center justify-center gap-space-sm px-space-lg py-space-md rounded-xl bg-primary text-on-primary font-semibold shadow-md hover:bg-primary-container hover:shadow-lg transition-all active:scale-[0.98]" onclick="callPatientAction('H-102', 'Eleanor Vance')" type="button">
+<span class="material-symbols-outlined text-[22px]">volume_up</span>
+<span class="font-label-lg text-label-lg font-bold">Call Next: Eleanor Vance (H-102)</span>
+</button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-space-xs px-space-md py-space-md rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-all active:scale-[0.98]" onclick="openUrgencyModal('H-102')" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary">bolt</span>
+<span class="font-label-lg text-label-lg font-semibold">Clinical Urgency Override</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Realtime Queue Performance Metrics Ribbon -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mb-space-2xl">
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">hourglass_bottom</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">11.4 min</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Average Wait Time</span>
+</div>
+</div>
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">42 Patients</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Completed Today</span>
+</div>
+</div>
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">speed</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">07:15 min</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Avg Consultation Time</span>
+</div>
+</div>
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[24px]">person_off</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">2 Skipped</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Exceptions Logged</span>
+</div>
+</div>
+</div>
+<!-- Operational Queue Table Container -->
+<div class="rounded-3xl bg-surface-container-lowest shadow-md overflow-hidden flex flex-col">
+<div class="px-space-xl py-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">table_rows</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Master FIFO Queue Order</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Auto-sorted by arrival check-in timestamp</span>
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" onclick="refreshTableData()" title="Sync live order" type="button">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Tabular Presentation -->
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="masterQueueTable">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="py-space-md px-space-lg">Pos</th>
+<th class="py-space-md px-space-md">Token</th>
+<th class="py-space-md px-space-lg">Patient Name & Profile</th>
+<th class="py-space-md px-space-md">Check-in</th>
+<th class="py-space-md px-space-md">Wait Duration</th>
+<th class="py-space-md px-space-md text-center">Status</th>
+<th class="py-space-md px-space-lg text-right">Quick Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="queueTableBody">
+<!-- Row 0: In Progress Serving -->
+<tr class="queue-row hover:bg-surface-container-low/60 transition-colors bg-secondary-container/10" data-status="in-progress" data-token="H-101">
+<td class="py-space-md px-space-lg font-label-numeric text-label-numeric text-secondary font-bold">#0</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-sm py-1 rounded-lg bg-surface-container-lowest font-label-numeric text-label-numeric font-bold text-on-surface shadow-sm">
+                H-101
+              </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Robert Martinez</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Walk-in • Male • 48 yrs</span>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">09:12 AM</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-numeric text-label-numeric text-secondary font-semibold">Serving (8m)</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+                In Progress
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:opacity-90 transition-opacity" onclick="markServingComplete()" type="button">Complete</button>
+<button class="px-space-sm py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="openExceptionModal('H-101', 'Patient skipped')" type="button">Skip</button>
+</div>
+</td>
+</tr>
+<!-- Row 1: Called Next -->
+<tr class="queue-row hover:bg-surface-container-low/60 transition-colors bg-primary-fixed/20" data-status="called" data-token="H-102">
+<td class="py-space-md px-space-lg font-label-numeric text-label-numeric text-primary font-bold">#1</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-sm py-1 rounded-lg bg-surface-container-lowest font-label-numeric text-label-numeric font-bold text-primary shadow-sm ring-1 ring-primary/20">
+                H-102
+              </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Eleanor Vance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Walk-in • Female • 62 yrs</span>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">09:18 AM</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">Wait 16m</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Called
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:opacity-90 transition-opacity" onclick="triggerAudioChime('Re-announcing Eleanor Vance Token H-102')" type="button">Call Again</button>
+<button class="px-space-sm py-1 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:opacity-90 transition-opacity" onclick="startService('H-102', 'Eleanor Vance')" type="button">Start Service</button>
+<button class="px-space-sm py-1 rounded-lg bg-error-container text-on-error-container font-label-md text-label-md hover:opacity-90 transition-opacity" onclick="openExceptionModal('H-102', 'Unresponsive')" type="button">No-Show</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Waiting -->
+<tr class="queue-row hover:bg-surface-container-low transition-colors" data-status="waiting" data-token="H-103">
+<td class="py-space-md px-space-lg font-label-numeric text-label-numeric text-on-surface-variant font-bold">#2</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-sm py-1 rounded-lg bg-surface-container-low font-label-numeric text-label-numeric font-bold text-on-surface">
+                H-103
+              </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">David Chen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Walk-in • Male • 34 yrs</span>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">09:22 AM</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">Wait 12m</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Waiting
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all" onclick="callPatientAction('H-103', 'David Chen')" type="button">Call</button>
+<button class="px-space-sm py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors" onclick="openUrgencyModal('H-103')" type="button">Prioritize</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Online Patient -->
+<tr class="queue-row hover:bg-surface-container-low transition-colors" data-status="waiting" data-token="H-104">
+<td class="py-space-md px-space-lg font-label-numeric text-label-numeric text-on-surface-variant font-bold">#3</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-sm py-1 rounded-lg bg-surface-container-low font-label-numeric text-label-numeric font-bold text-on-surface">
+                H-104
+              </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-on-surface font-semibold">John Doe</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] bg-tertiary-fixed text-on-tertiary-fixed font-bold uppercase">Online Check-in</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mobile Scheduled • Male • 29 yrs</span>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">09:25 AM</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">Wait 9m</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Waiting
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="px-space-sm py-1 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" onclick="notifyPatientApp('H-104')" type="button">
+<span class="material-symbols-outlined text-[15px] align-middle mr-1 text-primary">smartphone</span>Notify App
+              </button>
+</td>
+</tr>
+<!-- Row 4: Walk-in Recent -->
+<tr class="queue-row hover:bg-surface-container-low transition-colors" data-status="waiting" data-token="H-105">
+<td class="py-space-md px-space-lg font-label-numeric text-label-numeric text-on-surface-variant font-bold">#4</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-sm py-1 rounded-lg bg-surface-container-low font-label-numeric text-label-numeric font-bold text-on-surface">
+                H-105
+              </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Maria Santos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Walk-in • Female • 51 yrs</span>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">09:31 AM</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">Wait 3m</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Waiting
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="px-space-sm py-1 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" type="button">Details</button>
+</td>
+</tr>
+<!-- Row 5: Skipped / No Show -->
+<tr class="queue-row hover:bg-surface-container-low transition-colors bg-surface-container-low/40 opacity-75" data-status="exceptions" data-token="H-099">
+<td class="py-space-md px-space-lg font-label-numeric text-label-numeric text-outline font-bold">#—</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-sm py-1 rounded-lg bg-surface-container font-label-numeric text-label-numeric font-bold text-outline line-through">
+                H-099
+              </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface-variant font-medium">Samuel Brooks</span>
+<span class="font-body-sm text-body-sm text-outline">Walk-in • Male • 67 yrs</span>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">09:05 AM</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-error">Skipped (3 calls)</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container text-outline font-label-md text-label-md font-semibold">
+                No-Show
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="px-space-sm py-1 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all" onclick="reinstateToken('H-099', 'Samuel Brooks')" type="button">Re-instate to End of Queue</button>
+</td>
+</tr>
+<!-- Row 6: Cancelled -->
+<tr class="queue-row hover:bg-surface-container-low transition-colors bg-surface-container-low/20 opacity-60" data-status="exceptions" data-token="H-095">
+<td class="py-space-md px-space-lg font-label-numeric text-label-numeric text-outline font-bold">#—</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-sm py-1 rounded-lg bg-surface-container font-label-numeric text-label-numeric font-bold text-outline line-through">
+                H-095
+              </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface-variant font-medium">Clara Oswald</span>
+<span class="font-body-sm text-body-sm text-outline">Online App • Female • 31 yrs</span>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">08:50 AM</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-outline">Cancelled</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-error-container text-on-error-container font-label-md text-label-md font-semibold">
+                Cancelled
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="font-body-sm text-body-sm text-on-surface-variant italic">Cancelled by patient</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Operational Notice -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between text-on-surface-variant gap-space-sm">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+<span>FIFO Sequence Integrity: Locked • All manual overrides are logged to HIPAA audit trails</span>
+</div>
+<div class="flex items-center gap-space-md font-label-md text-label-md">
+<span>Displaying 6 active queue events</span>
+<button class="text-primary hover:underline font-semibold" type="button">Download Audit Snapshot</button>
+</div>
+</div>
+</div>
+<!-- CLINICAL URGENCY OVERRIDE MODAL / EXCEPTION FLYOUT (Standard Accessible Dialog Pattern) -->
+<div aria-labelledby="urgencyModalTitle" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/40 backdrop-blur-sm hidden" id="urgencyModal" role="dialog">
+<div class="bg-surface-container-lowest rounded-3xl shadow-xl max-w-lg w-full p-space-xl relative overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-start justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">crisis_alert</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="urgencyModalTitle">Clinical Urgency Override</h3>
+<span class="font-label-md text-label-md text-on-surface-variant">Bypass FIFO sequence for Token <span class="font-bold text-primary" id="modalTargetToken">H-102</span></span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-space-xxs rounded-lg hover:bg-surface-container" onclick="closeUrgencyModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-space-md mb-space-xl">
+<div class="p-space-md rounded-2xl bg-surface-container-low">
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-space-xxs" for="urgencyReasonSelect">Primary Justification Category</label>
+<select class="w-full bg-surface-container-lowest rounded-xl p-space-sm text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary" id="urgencyReasonSelect">
+<option value="chest_pain">Acute Chest Discomfort / Vital Instability</option>
+<option value="respiratory">Respiratory Distress / O2 Drop</option>
+<option value="pediatric_fever">Pediatric High Febrile Seizure Risk</option>
+<option value="physician_request">Attending Physician Stat Directive</option>
+<option value="other">Other Clinical Reason (Specify below)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-space-xxs" for="urgencyNotes">Triage Staff Clinical Notes</label>
+<textarea class="w-full p-space-sm rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary" id="urgencyNotes" placeholder="e.g. Patient presents with sudden diaphoresis, BP 170/105, elevated triage escalation authorized by RN Jenkins." rows="3"></textarea>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">This entry is immutable and committed to Counter 01 electronic medical log.</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm">
+<button class="px-space-lg py-space-sm rounded-xl bg-surface-container-low text-on-surface font-semibold hover:bg-surface-container transition-colors" onclick="closeUrgencyModal()" type="button">
+          Cancel
+        </button>
+<button class="px-space-lg py-space-sm rounded-xl bg-error text-on-error font-semibold hover:opacity-90 shadow-sm transition-all flex items-center gap-space-xs" onclick="confirmUrgencyOverride()" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Execute Stat Override</span>
+</button>
+</div>
+</div>
+</div>
+<!-- GENERIC EXCEPTION MODAL (No-Show, Skip, Transfer) -->
+<div aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/40 backdrop-blur-sm hidden" id="genericExceptionModal" role="dialog">
+<div class="bg-surface-container-lowest rounded-3xl shadow-xl max-w-md w-full p-space-xl relative animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-10 h-10 rounded-xl bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="exceptionModalHeader">Record Exception</h3>
+<span class="font-label-md text-label-md text-on-surface-variant" id="exceptionModalSubtitle">Token Operation</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg" id="exceptionModalDesc">
+        Are you sure you want to flag this patient as unresponsive? The token will be preserved in the exceptions registry.
+      </p>
+<div class="flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container text-on-surface font-semibold hover:bg-surface-container-high transition-colors" onclick="closeGenericExceptionModal()" type="button">
+          Dismiss
+        </button>
+<button class="px-space-md py-space-sm rounded-xl bg-primary text-on-primary font-semibold hover:bg-primary-container transition-all" onclick="executeExceptionConfirm()" type="button">
+          Confirm Action
+        </button>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION POPUP -->
+<div class="fixed bottom-6 right-6 z-50 flex items-center gap-space-sm px-space-lg py-space-md rounded-2xl bg-inverse-surface text-inverse-on-surface shadow-xl transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<span class="material-symbols-outlined text-secondary-fixed text-[22px]" id="toastIcon">check_circle</span>
+<span class="font-body-md text-body-md font-semibold" id="toastMessage">Action completed successfully</span>
+</div>
+</div>
+<script>
+  // Service Timer increment simulation
+  let seconds = 512;
+  const timerElem = document.getElementById('serviceTimer');
+  setInterval(() => {
+    seconds++;
+    const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+    const secs = (seconds % 60).toString().padStart(2, '0');
+    if (timerElem) timerElem.textContent = `${mins}:${secs}`;
+  }, 1000);
+
+  // Auto-Call Toggle state
+  let autoCallActive = false;
+  const autoCallBtn = document.getElementById('autoCallToggle');
+  const autoCallPin = document.getElementById('autoCallPin');
+  const autoCallStatus = document.getElementById('autoCallStatus');
+
+  if (autoCallBtn) {
+    autoCallBtn.addEventListener('click', () => {
+      autoCallActive = !autoCallActive;
+      if (autoCallActive) {
+        autoCallBtn.classList.remove('bg-surface-container-highest');
+        autoCallBtn.classList.add('bg-primary');
+        autoCallPin.classList.remove('translate-x-0.5');
+        autoCallPin.classList.add('translate-x-5');
+        autoCallStatus.textContent = 'Active (FIFO Auto)';
+        autoCallStatus.classList.add('text-secondary', 'font-semibold');
+        showToast('Auto-Call mode active: next token will trigger on consult completion.', 'bolt');
+      } else {
+        autoCallBtn.classList.add('bg-surface-container-highest');
+        autoCallBtn.classList.remove('bg-primary');
+        autoCallPin.classList.add('translate-x-0.5');
+        autoCallPin.classList.remove('translate-x-5');
+        autoCallStatus.textContent = 'Inactive (Manual)';
+        autoCallStatus.classList.remove('text-secondary', 'font-semibold');
+        showToast('Auto-Call paused. Staff manual trigger enforced.', 'toggle_off');
+      }
+    });
+  }
+
+  // Audio chime simulation
+  function triggerAudioChime(message) {
+    showToast(`Audio broadcast triggered: "${message}"`, 'volume_up');
+  }
+
+  // Interactive Call Patient Action
+  function callPatientAction(token, name) {
+    showToast(`Paging ${token} (${name}) to Counter 01`, 'campaign');
+    const mainBtn = document.getElementById('mainCallNextBtn');
+    if (mainBtn) {
+      mainBtn.classList.add('animate-pulse');
+      setTimeout(() => mainBtn.classList.remove('animate-pulse'), 1500);
+    }
+  }
+
+  function startService(token, name) {
+    const currentServicingToken = document.getElementById('currentServicingToken');
+    const currentServicingName = document.getElementById('currentServicingName');
+    if (currentServicingToken) currentServicingToken.textContent = token;
+    if (currentServicingName) currentServicingName.textContent = name;
+    seconds = 0;
+    showToast(`Started consultation for ${token} (${name})`, 'play_arrow');
+  }
+
+  function markServingComplete() {
+    showToast('Token H-101 consultation marked completed. Record archived.', 'check_circle');
+    const servToken = document.getElementById('currentServicingToken');
+    if (servToken) servToken.textContent = 'Idle';
+    const servName = document.getElementById('currentServicingName');
+    if (servName) servName.textContent = 'Ready for Next Call';
+  }
+
+  function transferQueuePrompt(token) {
+    showToast(`Transfer dialog opened for Token ${token} to Specialty Triage`, 'swap_horiz');
+  }
+
+  function reinstateToken(token, name) {
+    showToast(`Token ${token} (${name}) re-instated to tail position #15`, 'restart_alt');
+  }
+
+  function notifyPatientApp(token) {
+    showToast(`Push alert & SMS dispatched to patient device for token ${token}`, 'send_to_mobile');
+  }
+
+  // Modal handlers
+  function openUrgencyModal(token) {
+    const modal = document.getElementById('urgencyModal');
+    const tokenSpan = document.getElementById('modalTargetToken');
+    if (tokenSpan) tokenSpan.textContent = token;
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeUrgencyModal() {
+    const modal = document.getElementById('urgencyModal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function confirmUrgencyOverride() {
+    const token = document.getElementById('modalTargetToken').textContent;
+    const reason = document.getElementById('urgencyReasonSelect').value;
+    closeUrgencyModal();
+    showToast(`Urgency override confirmed for ${token}. Advanced to Head of Line.`, 'crisis_alert');
+  }
+
+  let activeExceptionTarget = '';
+  function openExceptionModal(token, reason) {
+    activeExceptionTarget = token;
+    const modal = document.getElementById('genericExceptionModal');
+    const sub = document.getElementById('exceptionModalSubtitle');
+    const desc = document.getElementById('exceptionModalDesc');
+    if (sub) sub.textContent = `Action on token ${token}`;
+    if (desc) desc.textContent = `Are you sure you want to flag ${token} with status: "${reason}"? This modifies FIFO order.`;
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeGenericExceptionModal() {
+    const modal = document.getElementById('genericExceptionModal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function executeExceptionConfirm() {
+    closeGenericExceptionModal();
+    showToast(`Exception recorded for ${activeExceptionTarget}. Patient logged as No-Show.`, 'person_off');
+  }
+
+  // Toast System
+  let toastTimeout;
+  function showToast(msg, iconName = 'check_circle') {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+    if (!toast) return;
+
+    if (toastMsg) toastMsg.textContent = msg;
+    if (toastIcon) toastIcon.textContent = iconName;
+
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3200);
+  }
+
+  // Quick Table Search & Filter logic
+  const searchInput = document.getElementById('queueSearch');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      const rows = document.querySelectorAll('#queueTableBody tr');
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  }
+
+  // Filter Tabs
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      btn.classList.remove('text-on-surface-variant');
+
+      const filter = btn.dataset.filter;
+      const rows = document.querySelectorAll('#queueTableBody tr');
+      rows.forEach(r => {
+        if (filter === 'all') {
+          r.style.display = '';
+        } else {
+          r.style.display = r.dataset.status === filter ? '' : 'none';
+        }
+      });
+    });
+  });
+
+  function refreshTableData() {
+    showToast('Queue state synchronized with central hospital server', 'sync');
+  }
+</script></main></div><script src="medi-queue.js"></script>
+</body></html>

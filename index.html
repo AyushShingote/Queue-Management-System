@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>MediQueue — Hospital Queue Management System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#2563eb',
+              600: '#004ac6',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#0b1c30',
+            },
+            clinical: {
+              teal: '#006a61',
+              cyan: '#86f2e4',
+              surface: '#f8f9ff',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .hover-lift {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(0, 74, 198, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-[#f8f9ff] text-slate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white">
+
+  <!-- Hospital Brand Top Banner -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/20">
+          <span class="material-symbols-outlined text-2xl">local_hospital</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-xl tracking-tight text-[#004ac6]">MediQueue</span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+              v2.4 Live
+            </span>
+          </div>
+          <p class="text-xs text-slate-500">Clinical Queue Intelligence & Triage Dispatch</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <!-- Live Status Pill -->
+        <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium border border-slate-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Station #01: General OPD Online</span>
+        </div>
+
+        <!-- Chime Sound Button -->
+        <button id="headerChimeBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-semibold transition-colors border border-blue-200/60 cursor-pointer">
+          <span class="material-symbols-outlined text-[18px]">volume_up</span>
+          <span class="hidden sm:inline">Chime Test</span>
+        </button>
+
+        <a href="staff_dashboard.html" class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#004ac6] hover:bg-blue-700 text-white text-xs font-semibold shadow-sm transition-all shadow-blue-600/20">
+          <span>Open Suite</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Operational Matrix -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full flex-1">
+    
+    <!-- Hero Intro -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#004ac6] text-xs font-semibold border border-blue-100 mb-4">
+        <span class="material-symbols-outlined text-[16px]">medical_services</span>
+        Hospital Management System Frontend
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0b1c30] tracking-tight">
+        Next-Generation Clinical Queue & Triage Management
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+        High-reliability digital infrastructure connecting reception desks, physician consoles, self-service kiosks, and patient waiting room displays.
+      </p>
+    </div>
+
+    <!-- Live Telemetry KPI Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-2xl">pending_actions</span>
+        </div>
+        <div>
+          <div class="text-xs uppercase font-bold text-slate-400 tracking-wider">Patients Waiting</div>
+          <div class="text-2xl font-extrabold text-slate-900" id="liveWaitCount">14</div>
+          <div class="text-[11px] text-emerald-600 font-medium">FIFO Triage Active</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-2xl">stethoscope</span>
+        </div>
+        <div>
+          <div class="text-xs uppercase font-bold text-slate-400 tracking-wider">Now Serving</div>
+          <div class="text-2xl font-extrabold text-teal-700 font-mono" id="liveServingToken">A-108</div>
+          <div class="text-[11px] text-slate-500 font-medium">Counter 01 (General OPD)</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-2xl">campaign</span>
+        </div>
+        <div>
+          <div class="text-xs uppercase font-bold text-slate-400 tracking-wider">Next In Line</div>
+          <div class="text-2xl font-extrabold text-amber-700 font-mono" id="liveNextToken">H-102</div>
+          <div class="text-[11px] text-amber-600 font-medium">Called to Station</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-2xl">task_alt</span>
+        </div>
+        <div>
+          <div class="text-xs uppercase font-bold text-slate-400 tracking-wider">Completed Today</div>
+          <div class="text-2xl font-extrabold text-slate-900" id="liveDoneCount">42</div>
+          <div class="text-[11px] text-emerald-600 font-medium">Avg wait ~14m</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dual Persona Workspace Gateways -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+
+      <!-- SUITE 1: Clinical Staff & Hospital Operations -->
+      <div class="bg-gradient-to-br from-white via-white to-blue-50/40 rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-[#004ac6]">
+              <span class="material-symbols-outlined text-[16px]">badge</span>
+              CLINICAL STAFF SUITE
+            </span>
+            <span class="text-xs font-semibold text-slate-400">Reception & Physicians</span>
+          </div>
+
+          <h2 class="text-2xl font-bold text-[#0b1c30]">Hospital Administration & Triage</h2>
+          <p class="text-sm text-slate-600 mt-2 mb-6">
+            Complete high-density workstation for nurses, triage officers, and consulting doctors to dispatch queue tokens and manage patient flow.
+          </p>
+
+          <div class="space-y-3">
+            <!-- Screen 1 Link -->
+            <a href="staff_dashboard.html" class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#004ac6] group-hover:bg-[#004ac6] group-hover:text-white transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-xl">space_dashboard</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900 group-hover:text-[#004ac6] transition-colors">1. Staff Dashboard</h3>
+                  <p class="text-xs text-slate-500">Live Counter 01 telemetry, active session timer, and quick call actions.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-[#004ac6] group-hover:translate-x-1 transition-all">chevron_right</span>
+            </a>
+
+            <!-- Screen 2 Link -->
+            <a href="queue_management.html" class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#004ac6] group-hover:bg-[#004ac6] group-hover:text-white transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-xl">view_kanban</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900 group-hover:text-[#004ac6] transition-colors">2. Queue Operations Board</h3>
+                  <p class="text-xs text-slate-500">Full FIFO triage table, auto-call toggle, status filters & search.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-[#004ac6] group-hover:translate-x-1 transition-all">chevron_right</span>
+            </a>
+
+            <!-- Screen 3 Link -->
+            <a href="register_patient.html" class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#004ac6] group-hover:bg-[#004ac6] group-hover:text-white transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-xl">person_add</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900 group-hover:text-[#004ac6] transition-colors">3. Patient Walk-in Intake</h3>
+                  <p class="text-xs text-slate-500">Reception registration form & 58mm thermal ticket slip printing.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-[#004ac6] group-hover:translate-x-1 transition-all">chevron_right</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+          <span class="text-xs text-slate-500 font-medium">3 Clinical Screen Views</span>
+          <a href="staff_dashboard.html" class="text-xs font-bold text-[#004ac6] hover:underline flex items-center gap-1">
+            Launch Staff Suite <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- SUITE 2: Patient Self-Service Portal & Public Kiosks -->
+      <div class="bg-gradient-to-br from-white via-white to-teal-50/40 rounded-3xl p-6 sm:p-8 border border-teal-100 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-teal-100 text-teal-800">
+              <span class="material-symbols-outlined text-[16px]">touch_app</span>
+              PATIENT & KIOSK SUITE
+            </span>
+            <span class="text-xs font-semibold text-slate-400">Patients & Public Displays</span>
+          </div>
+
+          <h2 class="text-2xl font-bold text-[#0b1c30]">Patient Experience & Live Displays</h2>
+          <p class="text-sm text-slate-600 mt-2 mb-6">
+            Calm, high-legibility interfaces for self-check-in, mobile queue tracking, and wall-mounted waiting room displays with vocal announcements.
+          </p>
+
+          <div class="space-y-3">
+            <!-- Screen 4 Link -->
+            <a href="patient_dashboard.html" class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-teal-400 hover:shadow-md transition-all">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 group-hover:bg-teal-600 group-hover:text-white transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-xl">account_circle</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900 group-hover:text-teal-700 transition-colors">4. Patient Dashboard</h3>
+                  <p class="text-xs text-slate-500">Personal queue card, patient MRN info, and assigned clinic counter.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-teal-700 group-hover:translate-x-1 transition-all">chevron_right</span>
+            </a>
+
+            <!-- Screen 5 Link -->
+            <a href="join_queue.html" class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-teal-400 hover:shadow-md transition-all">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 group-hover:bg-teal-600 group-hover:text-white transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-xl">touch_app</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900 group-hover:text-teal-700 transition-colors">5. Self-Service Join Queue</h3>
+                  <p class="text-xs text-slate-500">Department selection cards, wait times & digital ticket generation.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-teal-700 group-hover:translate-x-1 transition-all">chevron_right</span>
+            </a>
+
+            <!-- Screen 6 Link -->
+            <a href="patient_queue_tracking.html" class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-teal-400 hover:shadow-md transition-all">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 group-hover:bg-teal-600 group-hover:text-white transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-xl">sensors</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900 group-hover:text-teal-700 transition-colors">6. Live Queue Tracking & Announcer</h3>
+                  <p class="text-xs text-slate-500">Large public monitor view with real-time ETA, turn alert & audio chime.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-teal-700 group-hover:translate-x-1 transition-all">chevron_right</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+          <span class="text-xs text-slate-500 font-medium">3 Patient Screen Views</span>
+          <a href="patient_dashboard.html" class="text-xs font-bold text-teal-700 hover:underline flex items-center gap-1">
+            Launch Patient Suite <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Interactive Test Simulator -->
+    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm mb-12">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Cross-Screen Simulation</span>
+          <h2 class="text-xl font-bold text-slate-900">Experience Live Hospital Queuing in Real Time</h2>
+          <p class="text-xs text-slate-500 mt-1">Open two tabs (e.g. Staff Dashboard & Patient Tracking) and test actions to see instant synchronization!</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="simCallNextBtn" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer">
+            <span class="material-symbols-outlined text-[16px]">campaign</span>
+            <span>Call Next Patient</span>
+          </button>
+          <button id="simChimeBtn" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer">
+            <span class="material-symbols-outlined text-[16px]">notifications_active</span>
+            <span>Sound Hospital Chime</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Step Flow Visualizer -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/60">
+          <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center mx-auto mb-2">1</div>
+          <div class="font-bold text-xs text-slate-800">Check-in / Intake</div>
+          <p class="text-[11px] text-slate-500 mt-1">Patient registers or uses Kiosk to receive token.</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/60">
+          <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center mx-auto mb-2">2</div>
+          <div class="font-bold text-xs text-slate-800">Queue Placement</div>
+          <p class="text-[11px] text-slate-500 mt-1">Automatic FIFO sorting with clinical triage priority.</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/60">
+          <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center mx-auto mb-2">3</div>
+          <div class="font-bold text-xs text-slate-800">Physician Call</div>
+          <p class="text-[11px] text-slate-500 mt-1">Counter 01 calls token with audio & visual announcement.</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/60">
+          <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center mx-auto mb-2">4</div>
+          <div class="font-bold text-xs text-slate-800">Consultation & Resolve</div>
+          <p class="text-[11px] text-slate-500 mt-1">Consultation completes, metrics update automatically.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-white border-t border-slate-200/80 py-8 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-extrabold text-[#004ac6]">MediQueue</span>
+        <span>• Hospital Operations & Patient Flow System</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-1.5 text-emerald-600 font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          All Clinical Stations Operational
+        </span>
+        <span>Offline-Ready • LocalStorage Synced</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include MediQueue Core Engine -->
+  <script src="medi-queue.js"></script>
+  <script>
+    // Portal Specific UI Bindings
+    document.addEventListener('DOMContentLoaded', () => {
+      const liveWaitCount = document.getElementById('liveWaitCount');
+      const liveServingToken = document.getElementById('liveServingToken');
+      const liveNextToken = document.getElementById('liveNextToken');
+      const liveDoneCount = document.getElementById('liveDoneCount');
+
+      if (window.MediQueue) {
+        window.MediQueue.subscribe((state) => {
+          const stats = window.MediQueue.getStats();
+          if (liveWaitCount) liveWaitCount.textContent = stats.waitingCount;
+          if (liveServingToken) liveServingToken.textContent = stats.currentServingToken;
+          if (liveNextToken) liveNextToken.textContent = stats.nextCalledToken;
+          if (liveDoneCount) liveDoneCount.textContent = stats.completedCount;
+        });
+
+        document.getElementById('headerChimeBtn')?.addEventListener('click', () => {
+          window.MediQueue.playHospitalChime();
+        });
+
+        document.getElementById('simChimeBtn')?.addEventListener('click', () => {
+          const stats = window.MediQueue.getStats();
+          window.MediQueue.triggerCallNotification(stats.nextCalledToken, 'Counter 01');
+        });
+
+        document.getElementById('simCallNextBtn')?.addEventListener('click', () => {
+          window.MediQueue.callNext();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
